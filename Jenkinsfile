@@ -41,6 +41,9 @@ pipeline {
       input {
         message "Should we continue?"
       }
+      options {
+        timeout(time: 30, unit: 'SECONDS') 
+      }
       steps {
         echo "Continuing with deployment"
       }
