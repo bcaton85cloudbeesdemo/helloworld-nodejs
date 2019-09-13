@@ -29,6 +29,7 @@ pipeline {
         branch 'master'
       }
       steps {
+        publishEvent simpleEvent('hello-api-deploy-event')
         echo "TODO - build and push image"
       }
     }
