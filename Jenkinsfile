@@ -9,11 +9,11 @@ pipeline {
   }
   stages {
     stage('Test') {
-      agent { 
+      agent {
         kubernetes {
-            label 'nodejs-app-pod-2'
-            yamlFile 'nodejs-pod.yaml'
-          }
+          label 'nodejs-app-pod-2'
+          yamlFile 'nodejs-pod.yaml'
+        }
       }
       steps {
         checkout scm
@@ -29,7 +29,6 @@ pipeline {
         branch 'master'
       }
       steps {
-        publishEvent simpleEvent('hello-api-deploy-event')
         echo "TODO - build and push image"
       }
     }
